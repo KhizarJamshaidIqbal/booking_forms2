@@ -40,12 +40,24 @@
         .checkout-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
             border-bottom: 1px solid #f0f0f0;
         }
         .checkout-item:last-child {
             border-bottom: none;
+        }
+        .item-image {
+            flex: 0 0 60px;
+            margin-right: 15px;
+            height: 50px;
+        }
+        .item-image img {
+            width: 60px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
         }
         .item-name {
             flex: 3;
@@ -151,6 +163,11 @@
             <h2>Selected Items</h2>
             @foreach($selectedItems as $item)
             <div class="checkout-item">
+                @if(isset($item['image_url']))
+                <div class="item-image">
+                    <img src="{{ $item['image_url'] }}" alt="{{ $item['name'] }}">
+                </div>
+                @endif
                 <div class="item-name">{{ $item['name'] }}</div>
                 <div class="item-quantity">{{ $item['quantity'] ?? 1 }}</div>
                 <div class="item-price">AED {{ $item['price'] }}</div>
