@@ -1367,7 +1367,13 @@
             <div class="transfer-fields" x-show="showTransferFields" x-transition>
                 <div class="form-group mt-3">
                     <label for="pickup_location" class="required-field">Pickup location/ Hotel Name</label>
-                    <input type="text" name="pickup_location" id="pickup_location" class="form-control">
+                    <input
+                        type="text"
+                        name="pickup_location"
+                        id="pickup_location"
+                        class="form-control"
+                        :required="showTransferFields && (selectedOptions.transfer_option === 'private_transfer' || selectedOptions.transfer_option === 'sharing_transfer')"
+                    >
 
                     <label for="hotel_room" class="mt-2">Hotel Room No</label>
                     <input type="text" name="hotel_room" id="hotel_room" class="form-control">
