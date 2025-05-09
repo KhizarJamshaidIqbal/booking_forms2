@@ -13,7 +13,7 @@
         name="{{ $name }}"
         id="{{ $name }}"
         class="form-control"
-        placeholder="{{ $placeholder }}"
+        placeholder="{{ $placeholder ?? '' }}"
         value="{{ $value }}"
         {{ $required ? 'required' : '' }}
         {{ $attributes }}
