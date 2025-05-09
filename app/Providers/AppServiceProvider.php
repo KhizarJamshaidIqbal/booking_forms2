@@ -11,6 +11,7 @@ use App\View\Components\FormSelect;
 use App\View\Components\FormCheckbox;
 use App\View\Components\FormRadio;
 use App\View\Components\PackageOption;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Schema::defaultStringLength(191);
         Blade::component('form', Form::class);
         Blade::component('form-section', FormSection::class);
         Blade::component('form-input', FormInput::class);
