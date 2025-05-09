@@ -13,7 +13,7 @@
         id="{{ $name }}"
         class="form-select"
         {{ $required ? 'required' : '' }}
-        {{ isset($attributes) && !is_array($attributes) ? $attributes : '' }}
+        {{ $attributes }}
     >
         @if ($placeholder)
             <option value="" disabled {{ $selected ? '' : 'selected' }}>{{ $placeholder }}</option>
